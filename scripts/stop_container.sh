@@ -10,9 +10,9 @@ CONTAINER_ID=$(sudo docker ps --filter "name=$CONTAINER_NAME" --format "{{.ID}}"
 # Check if a running container is found
 if [ -n "$CONTAINER_ID" ]; then
     echo "Stopping container: $CONTAINER_NAME"
-    sudo docker stop "$CONTAINER_ID"
+    sudo docker stop "$CONTAINER_NAME"
     echo "Removing container: $CONTAINER_NAME"
-    sudo docker rm "$CONTAINER_ID"
+    sudo docker rm "$CONTAINER_NAME"
 else
     echo "No running container found with name: $CONTAINER_NAME"
 fi
